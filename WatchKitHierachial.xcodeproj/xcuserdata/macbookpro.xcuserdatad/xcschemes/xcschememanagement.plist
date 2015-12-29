@@ -4,10 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Notification - WatchKitNext.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>WatchKitHierachial.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>WatchKitNext.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -23,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>529C6BE61C2C14E800FEEB48</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>529C6BFA1C2C154B00FEEB48</key>
 		<dict>
 			<key>primary</key>
 			<true/>

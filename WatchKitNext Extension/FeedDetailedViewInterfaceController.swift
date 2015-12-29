@@ -11,11 +11,17 @@ import Foundation
 
 
 class FeedDetailedViewInterfaceController: WKInterfaceController {
-
+    @IBOutlet var feedImage: WKInterfaceImage!
+    @IBOutlet var feedDate: WKInterfaceDate!
+    @IBOutlet var feedTitle: WKInterfaceLabel!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
+        self.setTitle("Back")
+        if let feed = context as? FeedModel {
+            feedTitle.setText(feed.feedTitle)
+            feedImage.setImage(UIImage(named: feed.feedImage))
+        }
     }
 
     override func willActivate() {

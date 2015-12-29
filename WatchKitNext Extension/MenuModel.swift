@@ -9,5 +9,11 @@
 import WatchKit
 
 class MenuModel: NSObject {
-
+    var menuTitle: String = ""
+    var menuImage: String = ""
+    
+    init?(menuTitle: String, menuImage: String) {
+        self.menuTitle = menuTitle
+        self.menuImage = menuImage
+    }
 }
