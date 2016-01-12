@@ -79,12 +79,18 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         
         session.sendMessage(applicationData, replyHandler: { reply in
             //self.statusLabel.setText(reply["status"] as? String)
-            print(reply["Key1"])
+                print(reply["Key1"])
             }, errorHandler: { error in
                 print("error: \(error)")
         })
     }
     
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        
+        //Use this to update the UI instantaneously (otherwise, takes a little while)
+        dispatch_async(dispatch_get_main_queue()) {
+        }
+    }
     
 
 }

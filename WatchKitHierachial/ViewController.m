@@ -24,4 +24,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)sendMessageToWatch {
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"fromApp",@"Key1", nil];
+    [[WCSession defaultSession] sendMessage:dict
+                               replyHandler:^(NSDictionary *replyHandler) {
+                                   
+                               }
+                               errorHandler:^(NSError *error) {
+                                   
+                               }
+     ];
+}
+
 @end

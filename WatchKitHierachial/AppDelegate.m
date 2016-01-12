@@ -59,6 +59,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_9_0
 -(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message
   replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler {
     NSString *testValue = [message objectForKey:@"testValue"];
@@ -66,15 +67,5 @@
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"Objects",@"Key1", nil];
     replyHandler(dict);
 }
-
-/*- (void)session:(nonnull WCSession *)session didReceiveMessage:(nonnull NSDictionary *)message replyHandler:(nonnull void (^)(NSDictionary * __nonnull)) replyHandler {
-    NSString *testValue = [message objectForKey:@"testValue"];
-    NSLog(@"Message from watch %@", testValue);
-    
-    //Use this to update the UI instantaneously (otherwise, takes a little while)
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-    });
-}*/
-
+#endif
 @end
