@@ -28,6 +28,7 @@
 		529C6C2A1C2C273A00FEEB48 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C6C291C2C273A00FEEB48 /* MenuModel.swift */; };
 		529C6C2C1C2C2E2B00FEEB48 /* FeedsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C6C2B1C2C2E2B00FEEB48 /* FeedsInterfaceController.swift */; };
 		529C6C301C2C347E00FEEB48 /* FeedDetailedViewInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C6C2F1C2C347E00FEEB48 /* FeedDetailedViewInterfaceController.swift */; };
+		529FDA541C45226200559B50 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529FDA531C45226100559B50 /* WatchConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		529C6C291C2C273A00FEEB48 /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		529C6C2B1C2C2E2B00FEEB48 /* FeedsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsInterfaceController.swift; sourceTree = "<group>"; };
 		529C6C2F1C2C347E00FEEB48 /* FeedDetailedViewInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDetailedViewInterfaceController.swift; sourceTree = "<group>"; };
+		529FDA531C45226100559B50 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529FDA541C45226200559B50 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +159,7 @@
 		529C6BBA1C2C14E700FEEB48 = {
 			isa = PBXGroup;
 			children = (
+				529FDA531C45226100559B50 /* WatchConnectivity.framework */,
 				529C6BC51C2C14E800FEEB48 /* WatchKitHierachial */,
 				529C6BDF1C2C14E800FEEB48 /* WatchKitHierachialTests */,
 				529C6BEA1C2C14E800FEEB48 /* WatchKitHierachialUITests */,
@@ -794,6 +798,7 @@
 				529C6BF21C2C14E800FEEB48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		529C6BF31C2C14E800FEEB48 /* Build configuration list for PBXNativeTarget "WatchKitHierachialTests" */ = {
 			isa = XCConfigurationList;
@@ -802,6 +807,7 @@
 				529C6BF51C2C14E800FEEB48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		529C6BF61C2C14E800FEEB48 /* Build configuration list for PBXNativeTarget "WatchKitHierachialUITests" */ = {
 			isa = XCConfigurationList;
@@ -810,6 +816,7 @@
 				529C6BF81C2C14E800FEEB48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		529C6C1A1C2C154B00FEEB48 /* Build configuration list for PBXNativeTarget "WatchKitNext Extension" */ = {
 			isa = XCConfigurationList;
@@ -818,6 +825,7 @@
 				529C6C1C1C2C154B00FEEB48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		529C6C1E1C2C154B00FEEB48 /* Build configuration list for PBXNativeTarget "WatchKitNext" */ = {
 			isa = XCConfigurationList;
@@ -826,6 +834,7 @@
 				529C6C201C2C154B00FEEB48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

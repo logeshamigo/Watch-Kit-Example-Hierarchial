@@ -8,9 +8,9 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
-
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController,WCSessionDelegate {
 
     @IBOutlet weak var menuTable: WKInterfaceTable!
     
@@ -21,7 +21,7 @@ class InterfaceController: WKInterfaceController {
     var menus:[MenuModel] = []
     
     
-    
+    var session : WCSession!
     
     
     override func awakeWithContext(context: AnyObject?) {
@@ -32,6 +32,7 @@ class InterfaceController: WKInterfaceController {
         menus.append(blogMenu!)
         menus.append(featuredJobs!)
         loadTableData()
+        
     }
     
     private func loadTableData() {
@@ -58,11 +59,32 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
+        sendMessageToPhone()
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+    
+    func sendMessageToPhone() {
+    
+        let applicationData = ["testValue":"My test message"]
+        
+        session.sendMessage(applicationData, replyHandler: { reply in
+            //self.statusLabel.setText(reply["status"] as? String)
+            print(reply["Key1"])
+            }, errorHandler: { error in
+                print("error: \(error)")
+        })
+    }
+    
+    
 
 }

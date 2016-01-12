@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +18,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+        
+        if(session.paired != true) {
+            NSLog(@"Apple Watch is not paired");
+        }
+        
+        if(session.watchAppInstalled != true) {
+            NSLog(@"WatchKit app is not installed");
+        }
+    } else {
+        NSLog(@"WatchConnectivity is not supported on this device");
+    }
     return YES;
 }
 
@@ -39,7 +55,26 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+ 
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+-(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message
+  replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler {
+    NSString *testValue = [message objectForKey:@"testValue"];
+    NSLog(@"Message from watch %@", testValue);
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"Objects",@"Key1", nil];
+    replyHandler(dict);
+}
+
+/*- (void)session:(nonnull WCSession *)session didReceiveMessage:(nonnull NSDictionary *)message replyHandler:(nonnull void (^)(NSDictionary * __nonnull)) replyHandler {
+    NSString *testValue = [message objectForKey:@"testValue"];
+    NSLog(@"Message from watch %@", testValue);
+    
+    //Use this to update the UI instantaneously (otherwise, takes a little while)
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+    });
+}*/
 
 @end

@@ -18,6 +18,7 @@
                                             <imageView width="35" height="35" alignment="left" verticalAlignment="center" image="blogs_icon" contentMode="scaleAspectFit" id="izk-UG-fDA"/>
                                             <label width="92" alignment="right" verticalAlignment="center" text="Label" textAlignment="left" numberOfLines="0" id="H0n-Zz-hvc">
                                                 <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                                <variation key="device=watch38mm" width="82"/>
                                             </label>
                                         </items>
                                     </group>
@@ -80,6 +81,7 @@
                                             <imageView width="35" height="35" alignment="left" verticalAlignment="center" contentMode="scaleAspectFill" id="jnu-13-7ZX"/>
                                             <label width="92" alignment="left" verticalAlignment="center" text="Label" textAlignment="right" numberOfLines="0" id="Q9v-MG-cxy">
                                                 <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                                <variation key="device=watch38mm" width="82"/>
                                             </label>
                                         </items>
                                     </group>
