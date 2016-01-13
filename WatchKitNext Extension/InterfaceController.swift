@@ -64,7 +64,8 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
             session.delegate = self
             session.activateSession()
         }
-        sendMessageToPhone()
+        self.sendMessageToPhone()
+        
     }
 
     override func didDeactivate() {
@@ -73,13 +74,14 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
     }
     
     
-    func sendMessageToPhone() {
+    private func sendMessageToPhone() {
     
         let applicationData = ["testValue":"My test message"]
         
         session.sendMessage(applicationData, replyHandler: { reply in
             //self.statusLabel.setText(reply["status"] as? String)
-                print(reply["Key1"])
+            let response = reply["Key1"] as? String
+                print("Message response '\(response!)'")
             }, errorHandler: { error in
                 print("error: \(error)")
         })
@@ -92,5 +94,6 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         }
     }
     
+   
 
 }

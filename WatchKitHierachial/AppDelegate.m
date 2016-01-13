@@ -33,6 +33,8 @@
     } else {
         NSLog(@"WatchConnectivity is not supported on this device");
     }
+    
+    
     return YES;
 }
 
@@ -63,7 +65,7 @@
 -(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message
   replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler {
     NSString *testValue = [message objectForKey:@"testValue"];
-    NSLog(@"Message from watch %@", testValue);
+    //NSLog(@"Message from watch %@", testValue);
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"Objects",@"Key1", nil];
     replyHandler(dict);
 }
